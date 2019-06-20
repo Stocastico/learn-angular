@@ -1,0 +1,16 @@
+<div class="fondo_style">
+    <h1>{{title}}</h1>
+    <h2>{{subtitle}}</h2>
+    <h3>{{animals}}</h3>
+</div>
+<ul class="list_style">
+    <li>{{animals[0]}}</li>
+    <li>{{animals[1]}}</li>
+    <li>{{animals[2]}}</li>
+</ul>
+
+<ul>
+    <li *ngFor='let animal of animals'>{{animal}} 
+        <button (click)="removeAnimal(animal)">X</button>
+    </li>
+</ul>

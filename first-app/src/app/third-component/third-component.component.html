@@ -1,0 +1,9 @@
+<div class="fondo_style">
+  <ul>
+    <li *ngFor='let city of cities'>{{city}}</li>
+  </ul>
+  <form (submit)='addCity(newCity)'>
+    New city: <input type="text" #newCity><br>
+    <button>ADD!</button>
+  </form> 
+</div>
