@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class BodyComponent implements OnInit {
 
   animals:string[]
-  length: string
+  length: number
+  totalLength: number = 0
   show=true;
 
   constructor() { 
@@ -21,25 +22,20 @@ export class BodyComponent implements OnInit {
       this.animals.push(animal.value);
       animal.value="";
       this.getLastLength();
+      this.calcTotalLength();
       animal.focus();
+      this.show = true
     }
     return false;
   }
 
   getLastLength()  {
-    var len = this.animals[this.animals.length-1].length
-    this.length = "The length of this animal is " + len;
+    this.length = this.animals[this.animals.length-1].length;
   }
 
   calcTotalLength()  {
     console.log("calcTotalLength called")
-    var i:number; 
-    var total = 0; 
-
-    for(i = 0; i<this.animals.length; i++) {
-      total += this.animals[i].length;
-    }
-    this.length = "The total length is " + total;
+    this.totalLength += this.length;
   }
 
   ngOnInit() {
