@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="form-group">
+        <form (submit)='addAnimal(newAnimal)'>
+          <h2>Add new animal</h2>
+          <input class="form-control" placeholder="Enter new animal" type="text" #newAnimal>
+          <br>
+          <button class="btn btn-primary">ADD!</button>
+        </form>
+      </div>
+      <br>
+      <ul class="list-group">
+          <li class="list-group-item" *ngFor='let animal of animals'>{{animal}} </li>
+      </ul>
+    </div>
+
+    <div class="col-sm">
+      <h2>Animal info</h2>
+      <div *ngIf="show" class="card text-white bg-warning mb-3">
+          <div class="card-body">
+              The length of this animal is {{length}} characters
+          </div>
+      </div>
+      <div *ngIf="!show" class="card text-white bg-info mb-3">
+          <div class="card-body">
+              The total length of the animals is {{totalLength}} characters
+          </div>
+      </div>
+      <div>
+        <button class="btn btn-primary" (click)="show = !show" type="submit">Total length</button>
+      </div>
+    </div>
+  </div>
+</div>
