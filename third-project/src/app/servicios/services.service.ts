@@ -3,20 +3,33 @@ import { Injectable } from '@angular/core'
 @Injectable()
 export class ServicesService {
 
-    services: Servi[]
+    services: Servi[] = [
+        {
+            header: "kjd",
+            title: "jkdnc",
+            desc: "jasc"
+        },
+        {
+            header: "ad",
+            title: "jkdsdsdfnc",
+            desc: "ddsv"
+        },
+        {
+            header: "kaefdjd",
+            title: "jkdfdnc",
+            desc: "jasdfsc"
+        }
+    ]
     header: String
     title: String
     desc: String
 
-    constructor(h: String, t: String, d: String) {
+    constructor() {
         console.log("Service created");
-        this.header = h
-        this.title = t
-        this.desc = d
     }
 
     getServices() {
-        //TODO
+        return this.services
     }
 }
 
