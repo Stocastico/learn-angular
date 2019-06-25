@@ -2,11 +2,11 @@
     <div class="card-group">
         <div class="card text-white bg-danger" *ngFor='let service of services'>
             <div class="card-header">
-                {{service}}
+                {{service.head}}
             </div>
             <div class="card-body">
-                <h5 class="card-title">{{service}}</h5>
-                <p class="card-text">{{service}}</p>
+                <h5 class="card-title">{{service.title}}</h5>
+                <p class="card-text">{{service.desc}}</p>
             </div>
         </div>
     </div>
