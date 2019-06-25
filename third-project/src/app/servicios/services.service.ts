@@ -13,5 +13,4 @@ export class ServicesService {
         this.title = t
         this.desc = d
     }
-
 }

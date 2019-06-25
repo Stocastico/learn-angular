@@ -15,16 +15,17 @@ export class ServicesComponent implements OnInit {
 
   services: ServicesService[]
 
-  constructor() {
+  constructor()
+  {
     //this.services = ['cane', 'gatto', 'topo', 'scimmia', 'leone', 'tigre', 'ratto', 'cigno', 'ansi']
     this.services = []
-    this.services.push(new ServicesService('IT', 'Programming', 'We develop stuff'))
+    this.services.push(new ServicesService('IT', 'C++', 'We develop stuff'))
     this.services.push(new ServicesService('IT', 'Web dev', 'We do webpages'))
     this.services.push(new ServicesService('IT', 'SEO', 'We optimize'))
-    this.services.push(new ServicesService('R&D', 'Deep learning', 'We like CNNS'))
+    this.services.push(new ServicesService('R&D', 'Deep learning', 'We like CNNs'))
     this.services.push(new ServicesService('R&D', '5G', 'Better than Huawei'))
-    this.services.push(new ServicesService('R&D', 'Automotive', 'We self-drive'))
-   }
+    this.services.push(new ServicesService('R&D', 'Automotive', 'Self-driving cars'))
+  }
 
   ngOnInit() {
   }
