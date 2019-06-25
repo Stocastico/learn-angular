@@ -10,12 +10,10 @@ const APP_ROUTES: Routes = [
   {path: 'about', component: AboutComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ]
-const APP_ROUTING = RouterModule.forRoot(APP_ROUTES)
+export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES)
 
-
-
-@NgModule({
-  imports: [APP_ROUTING],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+// @NgModule({
+//   imports: [APP_ROUTING],
+//   exports: [RouterModule]
+// })
+// export class AppRoutingModule { }

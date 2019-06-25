@@ -1,1 +1,13 @@
-<p>services works!</p>
+<div class="container">
+    <div class="card-group">
+        <div class="card text-white bg-danger" *ngFor='let service of services'>
+            <div class="card-header">
+                {{service}}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{service}}</h5>
+                <p class="card-text">{{service}}</p>
+            </div>
+        </div>
+    </div>
+</div>

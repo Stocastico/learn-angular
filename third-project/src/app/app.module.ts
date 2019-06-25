@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+//Routes
+import { APP_ROUTING } from './app-routing.module';
+
+//Components
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
@@ -22,7 +25,7 @@ import { BodyComponent } from './components/body/body.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    APP_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
