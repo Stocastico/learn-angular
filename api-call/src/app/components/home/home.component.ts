@@ -8,9 +8,14 @@ import { HttpClient } from "@angular/common/http"
 })
 export class HomeComponent  {
 
+  countries : any[] = []
+
   constructor(private http: HttpClient) {
     this.http.get('https://restcountries.eu/rest/v2/lang/es').subscribe(
-      response => { console.log(response) }
+      (response : any) => { 
+        console.log(response)
+        this.countries = response
+      }
     )
   }
 
