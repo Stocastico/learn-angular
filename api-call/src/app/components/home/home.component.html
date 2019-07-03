@@ -1,4 +1,4 @@
 <h1>Country list</h1>
 <ul>
-    <li *ngFor="let country of countries">{{ country.name }} - {{ country.population | number }}</li>
+    <li *ngFor="let country of countries">{{ country.name }} - {{ country.population | number }} - {{ country.currencies[0].name }}</li>
 </ul>
