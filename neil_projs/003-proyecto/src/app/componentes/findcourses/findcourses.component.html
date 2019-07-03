@@ -1,0 +1,14 @@
+<div class="container">
+        <h1>Cursos encontrados</h1>
+        <div class="row" *ngIf="courses.length == 0">
+            <div class="col-md-12">
+                <div class="alert alert-info" role="alert">
+                    No se ha encontrado resultados.
+                </div>
+            </div>
+        </div>
+    <div class=card-columns>
+      <app-cursos-card (courseSelected)="verCurso( $event )" [course]="course" [i]="course.idx" *ngFor="let course of courses"></app-cursos-card>
+    </div>
+            
+    </div>

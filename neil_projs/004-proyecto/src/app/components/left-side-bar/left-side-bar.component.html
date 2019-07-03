@@ -1,0 +1,27 @@
+<div class="container">
+        <ul class="list-group">
+                <li class="list-group-item active">Filtrar busqueda</li>
+                <li class="list-group-item">
+                        
+                                <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Buscar" (keydown.enter)="buscar(texto.value,20,2,xx)" #texto>
+                                <button (click)="buscar(texto.value,price.value,garantia.value, cambio.value)" class="btn btn-outline-success btn-block my-2 my-sm-0" type="button">Buscar</button>
+                             
+                </li>
+                <li class="list-group-item" >Precio: <select #price class="select">
+                                <option value=0>Todos</option>
+                        <option value=16000>Menos de 16.000€</option>
+                        <option value=20000>Menos de 20.000€</option>
+                </select></li>
+                <li class="list-group-item">Garantía: <select #garantia class="select">
+                                <option value=0>Todos</option>
+                                <option value=3>Menos de 3 años</option>
+                                <option value=7>Menos de 7 años</option>
+                </select></li>
+                <li class="list-group-item">Cambio: <select #cambio class="select">
+                                <option value="">Todos</option>
+                                <option value="automatico">Automático</option>
+                                <option value="manual">Manual</option>
+                </select></li>
+                
+              </ul>
+</div>

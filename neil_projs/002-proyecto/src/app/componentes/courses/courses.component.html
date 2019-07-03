@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Lista de Cursos</h1>
+<div class=card-columns>
+      <div class="card animated fadeIn fast"  *ngFor="let course of courses; let i = index" style="width: 18rem;">
+            <img src="{{ course.img}}" height="150px" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ course.nombre}}</h5>
+        
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{ course.nivel}}</li>
+              <li class="list-group-item">{{ course.inicio}}</li>
+              <li class="list-group-item">{{ course.precio}}</li>
+            </ul>
+            <div class="card-body">
+              <!-- <a href="#" class="btn btn-outline-primary btn-block">Ver más...</a>
+ -->
+ <button (click)="verCurso(i)" class="btn btn-outline-primary btn-block">Ver curso</button>
+            </div>
+          </div>
+        </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="container">
+<h1>Lista de Cursos</h1>
+  <div class=card-columns>
+    <app-cursos-card (courseSelected)="verCurso($event)" [course]="course" [i]="i" *ngFor="let course of courses; let i = index"></app-cursos-card>
+</div>
+</div>

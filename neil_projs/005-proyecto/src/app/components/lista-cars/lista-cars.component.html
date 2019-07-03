@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="card mb-3">
+        <!-- <div *ngFor="let car of cars" class="row no-gutters">
+          <div class="col-md-4">
+            <img [src]="car.img" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ car.nombre }}</h5>
+              <p class="card-text">PRECIO: <B>{{ car.precio }}</B></p>
+              <p class="card-text">CAMBIO: {{ car.cambio }}</p>
+              <p class="card-text">GARANTÍA: {{ car.garantia }} años</p>
+            </div>
+          </div>
+        </div> -->
+
+        <app-car (carSelected)="verCar( $event )" [car]="car" *ngFor="let car of cars"></app-car>
+      </div>
+</div>
