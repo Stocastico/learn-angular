@@ -8,6 +8,9 @@ import { SearchComponent } from './components/search/search.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { NavbarComponent } from './share/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
+import { QuizComponent } from './components/quiz/quiz.component';
+import { CountryComponent } from './components/country/country.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     SearchComponent,
     DetailComponent,
-    NavbarComponent
+    NavbarComponent,
+    HeaderComponent,
+    QuizComponent,
+    CountryComponent
   ],
   imports: [
     BrowserModule,

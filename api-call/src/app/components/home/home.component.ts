@@ -11,12 +11,16 @@ export class HomeComponent  {
   countries : any[] = []
 
   constructor(private http: HttpClient) {
-    this.http.get('https://restcountries.eu/rest/v2/lang/es').subscribe(
+    this.http.get('https://restcountries.eu/rest/v2/currency/eur').subscribe(
       (response : any) => { 
         console.log(response)
         this.countries = response
       }
     )
+  }
+
+  seeRegion(reg : string) {
+      console.log(reg)
   }
 
 }
