@@ -13,11 +13,12 @@ export class SearchComponent implements OnInit {
   currentRegion : string = ""
 
   constructor(private http: HttpClient) {
+    this.regionSelected = new EventEmitter()
     this.http.get('https://restcountries.eu/rest/v2/all?fields=region').subscribe(
       (response : any) => { 
         response.forEach( country => {
           if (!this.regions.includes(country.region)) {
-            console.log(country.region)
+            //console.log(country.region)
             this.regions.push(country.region)
           }
         });

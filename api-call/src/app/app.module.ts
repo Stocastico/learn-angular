@@ -10,7 +10,6 @@ import { NavbarComponent } from './share/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { QuizComponent } from './components/quiz/quiz.component';
-import { CountryComponent } from './components/country/country.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +19,7 @@ import { CountryComponent } from './components/country/country.component';
     DetailComponent,
     NavbarComponent,
     HeaderComponent,
-    QuizComponent,
-    CountryComponent
+    QuizComponent
   ],
   imports: [
     BrowserModule,
