@@ -23,6 +23,5 @@ export class ListaCarsComponent  {
   {
     console.log(i);
     this.router.navigate(['/car-detail',i]);
-  }     
-
+  }
 }

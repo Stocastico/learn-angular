@@ -19,7 +19,9 @@ export class HomeComponent  {
               private activateRoute: ActivatedRoute)
   {
     this.activateRoute.params.subscribe(
+
       params => {
+        this.getCountriesList(params.region);
         this.getCountriesList(params.region);
       }
     )
@@ -33,6 +35,10 @@ export class HomeComponent  {
       }
     );
     this.regionTitle = region;
+  }
+
+  seeCountry(countryCode: string) {
+    this.router.navigate(['/detail', countryCode]);
   }
 
 }

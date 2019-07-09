@@ -1,19 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { DetailComponent } from './components/detail/detail.component';
-import { NavbarComponent } from './share/navbar/navbar.component';
-import { HttpClientModule } from '@angular/common/http';
-import { HeaderComponent } from './components/header/header.component';
-import { QuizComponent } from './components/quiz/quiz.component';
+import { RouterModule } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
+
+//Rutas
+import { ROUTES } from "./app.routes";
+import { NavbarComponent } from './share/navbar/navbar/navbar.component';
+import { GameComponent } from './components/game/game.component';
 import { CardComponent } from './components/card/card.component';
 
-import { ROUTES } from './app-routing.module';
-import { GameComponent } from './components/game/game.component'
+//servicios
+import { CallsService } from './services/calls.service';
 
 @NgModule({
   declarations: [
@@ -22,17 +24,15 @@ import { GameComponent } from './components/game/game.component'
     SearchComponent,
     DetailComponent,
     NavbarComponent,
-    HeaderComponent,
-    QuizComponent,
-    CardComponent,
-    GameComponent
+    GameComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [CallsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

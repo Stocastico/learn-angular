@@ -1,0 +1,9 @@
+<div class="card">
+    <img [src]="pais.flag" class="card-img-top" [alt]="pais.name">
+    <div class="card-body">
+      <h5 class="card-title">{{pais.name}}</h5>
+      <p class="card-text"><b>Capital: </b>{{pais.capital}}</p>
+      <p class="card-text"><b>Población: </b>{{pais.population | number}}</p>
+      <button (click)="verPais(pais.alpha2Code)" class="btn btn-outline-primary btn-block">Ver detalle</button>
+    </div>
+  </div>

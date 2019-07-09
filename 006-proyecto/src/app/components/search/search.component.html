@@ -1,0 +1,15 @@
+<h2>Busqueda de Países de {{ regionTitulo }} con el término "{{termBuscar}}"</h2>
+<div class="row" *ngIf="paises.length == 0">
+   <div class="col-md-12">
+       <div class="alert alert-info" role="alert">
+           No se ha encontrado resultados.
+       </div>
+   </div>
+
+</div>
+<div class="card-columns">
+   
+   <app-card (countrySelected)="verPais($event)" [pais]="pais" *ngFor="let pais of paises"></app-card>
+    
+  </div>
+

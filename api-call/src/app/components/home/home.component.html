@@ -1,4 +1,4 @@
-<h1>Countryes of {{ regionTitle }}</h1>
+<h1>Countries of {{ regionTitle }}</h1>
 <div class="card-columns">
     <app-card (countrySelected)="seeCountry($event)" [country]="country" *ngFor="let country of countries"></app-card>
 </div>

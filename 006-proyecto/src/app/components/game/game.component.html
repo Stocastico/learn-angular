@@ -1,0 +1,16 @@
+  <div class="card">
+    <div class="card-header">
+      Pregunta número {{numeroPreguntas}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Cuál es la capital de...</h5>
+      <p class="card-text">{{pais}}</p>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button (click)="check(0)" type="button" class="btn btn-secondary">{{respuestas[0]}}</button>
+        <button (click)="check(1)" type="button" class="btn btn-secondary">{{respuestas[1]}}</button>
+        <button (click)="check(2)" type="button" class="btn btn-secondary">{{respuestas[2]}}</button>
+      </div>
+      <BR><BR>
+      <h5 class="card-text">SCORE: {{score}} | EFICIENCIA {{ eficiencia | percent}}</h5>
+    </div>
+  </div>

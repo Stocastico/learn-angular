@@ -1,0 +1,7 @@
+<h1>Lsita de Países de {{ regionTitulo }}</h1>
+<div class="card-columns">
+   
+   <app-card (countrySelected)="verPais($event)" [pais]="pais" *ngFor="let pais of paises"></app-card>
+    
+  </div>
+
