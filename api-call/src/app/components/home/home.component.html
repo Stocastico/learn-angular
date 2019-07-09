@@ -1,6 +1,4 @@
-<h1>Country list</h1>
-<app-detail (regionSelected)="seeRegion( $event )"></app-detail>
-<!-- <ul>
-
-    <li *ngFor="let country of countries">{{ country.name }} - {{ country.population | number }} - {{ country.currencies[0].name }}</li>
-</ul> -->
+<h1>Countryes of {{ regionTitle }}</h1>
+<div class="card-columns">
+    <app-card (countrySelected)="seeCountry($event)" [country]="country" *ngFor="let country of countries"></app-card>
+</div>

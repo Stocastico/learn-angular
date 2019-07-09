@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
 import { ActivatedRoute } from "@angular/router";
 import { Router } from "@angular/router";
+import { CallsService } from '../../services/calls.service'
 
 @Component({
   selector: 'app-home',
@@ -12,18 +12,27 @@ export class HomeComponent  {
 
   @Input() region : any
   countries : any[] = []
+  regionTitle : string;
 
-  constructor(private http: HttpClient) {
-    this.http.get('https://restcountries.eu/rest/v2/all/field='+this.region).subscribe(
-      (response : any) => { 
-        console.log(response)
-        this.countries = response
+  constructor(private router: Router,
+              private _callService: CallsService,
+              private activateRoute: ActivatedRoute)
+  {
+    this.activateRoute.params.subscribe(
+      params => {
+        this.getCountriesList(params.region);
       }
     )
   }
 
-  seeRegion(reg : string) {
-      console.log(reg)
+  getCountriesList(region : string)
+  {
+    this._callService.getByRegion(region).subscribe (
+      (response : any) => { 
+        this.countries = response 
+      }
+    );
+    this.regionTitle = region;
   }
 
 }

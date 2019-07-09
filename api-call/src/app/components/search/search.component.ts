@@ -18,7 +18,6 @@ export class SearchComponent implements OnInit {
       (response : any) => { 
         response.forEach( country => {
           if (!this.regions.includes(country.region)) {
-            //console.log(country.region)
             this.regions.push(country.region)
           }
         });
@@ -32,8 +31,8 @@ export class SearchComponent implements OnInit {
     
   }
 
-  seeRegion(reg : string) {
-    this.regionSelected.emit(reg)
+  seeRegion(region : string) {
+    this.regionSelected.emit(region)
   }
 
 }
