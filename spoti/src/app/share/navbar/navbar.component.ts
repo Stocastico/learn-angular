@@ -14,14 +14,4 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  // setCountries(reg:string){
-  //   this.router.navigate(['/home', reg]);
-  // }
-
-  // searchCountries(termino:string, region:string){
-  //   this.router.navigate(['/search', termino, region ]);
-  //   return false;
-  // }
-
 }

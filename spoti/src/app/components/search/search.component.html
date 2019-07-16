@@ -12,12 +12,14 @@
         </form>
     </div>
     <div class="card-columns">
-        <div *ngFor="let album of albumsFound" class="card" style="width:18-rem">
-            <img class="card-img-top" src={{album.images[0].url}} alt="Album image">
+        <div *ngFor="let elem of searchResults" class="card" style="width:18-rem">
+            <img *ngIf="elem.images[0]" class="card-img-top" src={{elem.images[0].url}} alt="Album image">
+            <img *ngIf="!elem.images[0]" class="card-img-top" src="https://cdn.browshot.com/static/images/not-found.png" alt="Album image">
             <div class="card-body">
-                <h5 class="card-title">{{album.title}}</h5>
-                <p class="card-text">Artist: {{album.artists[0].name}}</p>
-                <p class="card-text"><small class="text-muted">Release date: {{album.release_date}}</small></p>
+                <h5 class="card-title">{{elem.name}}</h5>
+                <p class="card-text">Followers: {{elem.followers.total}}</p>
+                <p class="card-text"><small class="text-muted">Genres: {{elem.genres}}</small></p>
+                <button (click)="seeArtist(elem.id)" class="btn btn-outline-primary btn-block">See details</button>
             </div>
         </div>
     </div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from "@angular/router";
 import { SpotifyService } from '../../services/spotify.service'
 
 @Component({
@@ -8,31 +9,35 @@ import { SpotifyService } from '../../services/spotify.service'
 })
 export class SearchComponent implements OnInit {
 
-  albumsFound : any[] = []
+  searchResults : any[] = []
 
-  constructor(private _spotifyService : SpotifyService) { }
+  constructor(private _spotifyService : SpotifyService,
+              private router:Router) { }
 
   ngOnInit() {
   }
 
-  searchAlbums(term: string, type: string)
+  searchAlbums(term: string, type: any)
   {
-    this._spotifyService.searchAlbums(term, type).subscribe((data:any)=>
+    this._spotifyService.search(term, type).subscribe((data:any)=>
     {
-      console.log(data)
-      console.log(data.artists)
-      console.log(data.artists.items)
-      if (type == "artist")
-        this.albumsFound = data.artists.items;
-      else if (type == "album")
-        this.albumsFound = data.albums.items;
-      else if (type == "playlist")
-        this.albumsFound = data.playlists.items;
-      else if (type == "track")
-        this.albumsFound = data.tracks.items;
+      if (type.value == "artist") {
+        console.log(data.artists.items)
+        this.searchResults = data.artists.items;
+      }
+      else if (type.value == "album")
+        this.searchResults = data.albums.items;
+      else if (type.value == "playlist")
+        this.searchResults = data.playlists.items;
+      else if (type.value == "track")
+        this.searchResults = data.tracks.items;
 
     });
+    return false;
   }
 
+  seeArtist(id: string) {
+    this.router.navigate(['/artist', id]);
+  }
 
 }
