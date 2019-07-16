@@ -5,8 +5,17 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class NoImagePipe implements PipeTransform {
 
-  transform(value: any, ...args: any[]): any {
-    return null;
+  transform(images: any[]): string {
+    if (!images) {
+      return 'https://cdn.browshot.com/static/images/not-found.png'
+    }
+
+    if (images.length > 0) {
+      return images[0].uri;
+    } else {
+      return 'https://cdn.browshot.com/static/images/not-found.png'
+    }
+
   }
 
 }
