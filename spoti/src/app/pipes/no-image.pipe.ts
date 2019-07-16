@@ -11,7 +11,7 @@ export class NoImagePipe implements PipeTransform {
     }
 
     if (images.length > 0) {
-      return images[0].uri;
+      return images[0].url;
     } else {
       return 'https://cdn.browshot.com/static/images/not-found.png'
     }
