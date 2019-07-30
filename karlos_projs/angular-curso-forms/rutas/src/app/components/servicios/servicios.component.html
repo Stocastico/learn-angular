@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <h1>Servicios</h1>
+    </div>
+    <div class="row">
+        <app-servicio-card
+                (servicioSelected)="verServicio($event)"
+                *ngFor="let servicio of servicios; let i = index"
+                [servicio]="servicio"
+                [i]="i">
+        </app-servicio-card>
+    </div>
+</div>
