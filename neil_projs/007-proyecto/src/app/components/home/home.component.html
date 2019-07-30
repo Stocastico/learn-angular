@@ -1,0 +1,10 @@
+<app-loading *ngIf="loading"></app-loading>
+<div class="card-columns">
+    <div (click)="verArtista(album.artists[0].id)" *ngFor="let album of albums" style="width: 18rem;" class="puntero">
+      <img  [src]="album.images | noimage" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{album.name}}</h5>
+        <span *ngFor="let artist of album.artists" class="badge badge-pill badge-primary">{{artist.name}}</span>
+      </div>
+    </div>
+</div>
