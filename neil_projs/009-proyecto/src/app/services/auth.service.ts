@@ -10,16 +10,12 @@ import { map } from 'rxjs/operators';
 export class AuthService {
 
   private url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty';
-  private apikey = 'AIzaSyC5ryxV9V1-13pbBsJMqvcWabxMnG4Z-jI';
-  /* private apikey = 'AIzaSyCr--fzsw8mVaADP3mPVyy72vsQKvJ6cYY'; */
-  
-
+  private apikey = 'Replace with my own key';
 
   userToken: string;
 
   // Crear nuevo usuario
   // https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=[API_KEY]
-
 
   // Login
   // https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=[API_KEY]
